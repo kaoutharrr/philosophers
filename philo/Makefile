@@ -6,15 +6,15 @@
 #    By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/18 12:21:16 by kkouaz            #+#    #+#              #
-#    Updated: 2023/06/24 18:28:46 by kkouaz           ###   ########.fr        #
+#    Updated: 2023/07/06 17:41:32 by kkouaz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME  = philo
 CC = cc
-CFLAGS = -Wall -Wextra -Werror   -pthread 
+CFLAGS = -Wall -Wextra -Werror  -fsanitize=thread -g3 -pthread 
 RM  = rm -rf
-SRC = main.c parse.c tools.c  ft_split.c philo.c tools2.c 
+SRC = main.c parse.c tools.c   philo.c tools2.c routines.c
 OBJ = $(SRC:.c=.o)
 
 all : $(NAME)
@@ -29,4 +29,4 @@ fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
-#-fsanitize=thread
+#

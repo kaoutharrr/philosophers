@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:29:40 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/06/24 18:27:38 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/06/25 22:35:13 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 
 typedef	struct t_private
 {
+	pthread_mutex_t	*lock1;
 	pthread_mutex_t lock;
 	unsigned long	time;
 	//struct timeval  start_time;
@@ -53,24 +54,26 @@ typedef struct t_public
 {
 	t_private	*private;
 }	t_public;
-
+void	my_lock(char *flag, int index, unsigned long time, pthread_mutex_t  *lock);
+void    eat(int index, unsigned long time, pthread_mutex_t *lock);
+void    b_eat(int index, unsigned long time, pthread_mutex_t *lock);
+void    ft_sleep(int index, unsigned long time, pthread_mutex_t *lock);
+void    die(int index, unsigned long time, pthread_mutex_t *lock);
+void    think(int index, unsigned long time, pthread_mutex_t *lock);
+//void	my_lock(char *flag, int index, unsigned long time);
 void	my_usleep(unsigned long time);
 unsigned long get_time(struct timeval time1);
-void    eat(int index, unsigned long time);
+
 unsigned long	get_actual_time();
 t_public	*fill_struct(int *args, int ac);
-void	ft_init(int *args, int ac);
+int	ft_init(int *args, int ac);
 int	*ft_parse(int ac, char **av);
 char	**ft_check(char **av);
-char	**ft_split(char *s, char c);
-char	*ft_strjoin(char *s1, char *s2);
 int     ft_strlen_a(char *s);
 int		*fill_arr(char **av);
 int		ft_atoi(char *str);
 int		ft_isdigit(int c);
 int		error(char *s);
 void	process(int *args, int size);
-char	**ft_split_join(char **av);
-char	*ft_strdup(char *s1);
-char	*ft_substr(char *s, int start,int len);
+
 #   endif

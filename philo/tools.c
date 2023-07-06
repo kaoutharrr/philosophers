@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 18:23:56 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/06/18 23:04:04 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/06/25 16:02:45 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,20 @@ int	ft_atoi(char *str)
 	while (str[i] && (str[i] <= '9' && str[i] >= '0'))
 		res = res * 10 + (str[i++] - 48);
 	if (sign == 1 && res > 2147483647)
-		return(error("too large number !!"));
+		return (error("too large number !!"));
 	if (sign == -1 && res > 2147483648)
-		return(error("too large number !!"));
+		return (error("too large number !!"));
 	return (res * sign);
 }
+
 int	error(char *s)
 {
 	int	i;
 
 	i = 0;
-    printf("%sError : ", RED);
-    printf("%s%s", CYAN, s);
-	return(-1);
+	printf("%sError : ", RED);
+	printf("%s%s", CYAN, s);
+	return (-1);
 }
 
 int	ft_strlen_a(char *s)
@@ -90,23 +91,4 @@ char	*ft_strjoin(char *s1, char *s2)
 	free(s1);
 	stj[i + j] = '\0';
 	return (stj);
-}
-char	*ft_strdup(char *s1)
-{
-	char	*s2;
-	int		i;
-	int		len;
-
-	i = 0;
-	len = ft_strlen_a(s1) + 1;
-	s2 = malloc(sizeof(char) * len);
-	if (!s2)
-		return (NULL);
-	while (s1[i])
-	{
-		s2[i] = s1[i];
-		i++;
-	}
-	s2[i] = '\0';
-	return (s2);
 }
