@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/23 18:33:14 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/06/25 21:56:47 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/07/12 07:13:54 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	my_usleep(unsigned long time_to_usleep)
 	time = get_actual_time() + time_to_usleep;
 	while (get_actual_time() <= time)
 	{
-		usleep(10);
+		usleep(50);
 	}
 }
 void	my_lock(char *flag, int index, unsigned long time, pthread_mutex_t  *lock)

@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 11:29:40 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/06/25 22:35:13 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/07/12 08:42:27 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@
 
 typedef	struct t_private
 {
-	pthread_mutex_t	*lock1;
 	pthread_mutex_t lock;
 	unsigned long	time;
-	//struct timeval  start_time;
 	int number_of_philos;
 	int number_of_forks;
 	int time_to_eat;
@@ -75,5 +73,5 @@ int		ft_atoi(char *str);
 int		ft_isdigit(int c);
 int		error(char *s);
 void	process(int *args, int size);
-
+int ft_finish(t_private *private, int i, int j,int *args);
 #   endif

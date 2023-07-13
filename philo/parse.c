@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/18 11:29:42 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/06/25 16:00:23 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/07/13 02:04:58 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char	**ft_check(char **av)
 	while (av[i])
 	{
 		j = 0;
+		if (av[i][0] == '+')
+				j++;
 		while (av[i][j])
 		{
 			if (!ft_isdigit(av[i][j]))
