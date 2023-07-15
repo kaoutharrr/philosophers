@@ -6,7 +6,7 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 07:24:13 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/07/14 09:05:03 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/07/15 00:58:58 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,8 @@ void	go_philo(pthread_mutex_t *l, t_public *public, int n)
 	{
 		pthread_create(&public->private[i].philo, NULL, routine,
 			&public->private[i]);
-		usleep(50);
+		pthread_detach(public->private[i].philo);
+		usleep(500);
 		i++;
 	}
 }

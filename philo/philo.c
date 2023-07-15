@@ -6,38 +6,11 @@
 /*   By: kkouaz <kkouaz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 21:40:21 by kkouaz            #+#    #+#             */
-/*   Updated: 2023/07/14 09:01:46 by kkouaz           ###   ########.fr       */
+/*   Updated: 2023/07/15 00:55:23 by kkouaz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-// void	*routine(void *str)
-// {
-// 	t_private	*private;
-
-// 	private = str;
-// 	while (1)
-// 	{
-// 		pthread_mutex_lock(private->l_fork);
-// 		my_lock("eat", private->index, private->time, private->lock);
-// 		pthread_mutex_lock(private->r_fork);
-// 		my_lock("b_eat", private->index, private->time, private->lock);
-// 		pthread_mutex_lock(private->lock);
-// 			private->times_he_ate++;
-// 		pthread_mutex_unlock(private->lock);
-// 		pthread_mutex_lock(private->lock);
-// 		private->last_time_he_ate = get_actual_time();
-// 		pthread_mutex_unlock(private->lock);
-// 		my_usleep(private->time_to_eat);
-// 		pthread_mutex_unlock(private->l_fork);
-// 		pthread_mutex_unlock(private->r_fork);
-// 		my_lock("sleep", private->index, private->time, private->lock);
-// 		my_usleep(private->time_to_sleep);
-// 		my_lock("think", private->index, private->time, private->lock);
-// 	}
-// 	return (NULL);
-// }
 
 int	ft_init(int *args, int ac)
 {
