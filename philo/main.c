@@ -15,14 +15,14 @@
 int	main(int ac, char **av)
 {
 	int	*args;
-
+	(void)ac;
 	if (ac != 5 && ac != 6)
 	{
 		printf("%sError : ", RED);
 		printf("%sinvalid arguments !!\n", CYAN);
 		return (0);
 	}
-	args = ft_parse(ac, av);
+	args = ft_parse(av);
 	if (!args)
 	{
 		printf("%sError : ", RED);

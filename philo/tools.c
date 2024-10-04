@@ -46,9 +46,6 @@ int	ft_atoi(char *str)
 
 int	error(char *s)
 {
-	int	i;
-
-	i = 0;
 	printf("%sError : ", RED);
 	printf("%s%s", CYAN, s);
 	return (-1);

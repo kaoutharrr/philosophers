@@ -12,14 +12,10 @@
 
 #include"header.h"
 
-int	*ft_parse(int ac, char **av)
+int	*ft_parse(char **av)
 {
 	char	**str;
 	int		*arr;
-	int		i;
-
-	i = 0;
-	ac = 0;
 	str = ft_check(av);
 	if (!str)
 		return (NULL);

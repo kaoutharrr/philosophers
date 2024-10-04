@@ -15,14 +15,10 @@
 int	ft_init(int *args, int ac)
 {
 	t_public		*public;
-	pthread_t		*philo;
 	pthread_mutex_t	*fork;
-	int				i;
 	pthread_mutex_t	l;
 
-	i = 0;
 	fork = malloc(args[0] * sizeof(pthread_mutex_t));
-	philo = malloc(args[0] * sizeof(pthread_t));
 	public = fill_struct(args, ac);
 	init_forks(fork, args[0]);
 	setup(public, fork, args[0]);

@@ -63,7 +63,7 @@ unsigned long	get_time(struct timeval time1);
 unsigned long	get_actual_time(void);
 t_public		*fill_struct(int *args, int ac);
 int				ft_init(int *args, int ac);
-int				*ft_parse(int ac, char **av);
+int				*ft_parse(char **av);
 char			**ft_check(char **av);
 int				ft_strlen_a(char *s);
 int				*fill_arr(char **av);
